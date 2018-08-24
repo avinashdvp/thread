@@ -7,15 +7,15 @@ import javax.persistence.Id;
 public class Supplier 
 {
 @Id
-private String supplierId;
+private int supplierId;
 @Column
 private String suppliername;
 @Column
 private String supplierDescription;
-public String getSupplierId() {
+public int getSupplierId() {
 	return supplierId;
 }
-public void setSupplierId(String supplierId) {
+public void setSupplierId(int supplierId) {
 	this.supplierId = supplierId;
 }
 public String getSuppliername() {

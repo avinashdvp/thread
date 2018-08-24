@@ -10,8 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
+import com.avinash.dt12.model.Category;
 import com.avinash.dt12.model.Product;
-
+@Component
 @Repository
 
 public class ProductDaoimpl implements ProductDao {
@@ -24,7 +25,8 @@ public class ProductDaoimpl implements ProductDao {
 	{
 
 		Session session=sessionFactory.openSession();
-		session.save(pro);
+		
+		session.saveOrUpdate(pro);
 		Transaction t=session.beginTransaction();
 		t.commit();
 		return false;
@@ -43,5 +45,37 @@ public class ProductDaoimpl implements ProductDao {
 	       return productList;
 		
 	}
+
+
+	public boolean deleteProduct(int productId) 
+	{
+		Session session=sessionFactory.openSession();
+		Product product=(Product)session.get(Product.class,productId);
+		 
+	      session.delete(product);
+	      Query query=session.createQuery("from Product");
+	     Transaction t=session.beginTransaction();
+			t.commit();
+		return false;
+	}
+
+
+
+	
+	public Product editProduct(int productId) 
+	{
+		Session session=sessionFactory.openSession();
+		Product product=(Product)session.get(Product.class,productId);
+		return product;
+	}
+	
+	public Product cart(int productId) 
+	{
+		Session session=sessionFactory.openSession();
+		Product product=(Product)session.get(Product.class,productId);
+		return product;
+	}
+	
+	
 	
 }

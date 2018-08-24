@@ -10,7 +10,7 @@ import javax.persistence.Table;
 public class Category 
 {
 	@Id
-	private String categoryId;
+	private int categoryId;
 	@Column(name="categoryName")
 	private String categoryName;
 	@Column(name="categoryDiscription")
@@ -21,10 +21,10 @@ public class Category
 	public void setCategoryDiscription(String categoryDiscription) {
 		this.categoryDiscription = categoryDiscription;
 	}
-	public String getCategoryId() {
+	public int getCategoryId() {
 		return categoryId;
 	}
-	public void setCategoryId(String categoryId) {
+	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
 	}
 	public String getCategoryName() {

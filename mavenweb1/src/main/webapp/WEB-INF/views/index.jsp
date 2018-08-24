@@ -23,11 +23,22 @@
     <li class="nav-item">
       <a class="nav-link" href="Product.html">product Form</a>
     </li>
+    
     <li class="nav-item">
       <a class="nav-link" href="Category.html">Category Form</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="Supplier.html">Supplier Form</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Dropdown link
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
     </li>
 </ul>
 </nav>
@@ -67,9 +78,9 @@
     </div>
 
     <div class="item">
-      <img src="resources/Paneer_Makhni" alt="Flower">
+      <img src="resources/1472105029600.jpg" alt="Flower">
       <div class="carousel-caption">
-        <h3>Veg Extravaganza</h3>
+        <h3></h3>
         <p></p>
       </div>
     </div>
@@ -116,7 +127,23 @@
         <td>180</td>
       </tbody>
   </table>
-
+<div class="container" style="background:skyblue">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <p>Lorem ipsum dolor..</p>
+      <p>Ut enim ad..</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor..</p>
+      <p>Ut enim ad..</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3> 
+      <p>Lorem ipsum dolor..</p>
+      <p>Ut enim ad..</p>
+    </div>
 
 </div>
 </body>

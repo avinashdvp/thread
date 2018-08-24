@@ -11,7 +11,7 @@
      <url-pattern>/</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
-  <welcome-file>/WEB-INF/views/index.jsp</welcome-file>
+  <welcome-file>/WEB-INF/views/home.jsp</welcome-file>
   </welcome-file-list>
   <context-param>
 <param-name>contextConfigLocation</param-name>

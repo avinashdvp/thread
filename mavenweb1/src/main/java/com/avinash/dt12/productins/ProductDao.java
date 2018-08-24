@@ -8,4 +8,7 @@ public interface ProductDao
 {
 	boolean insert(Product pro);
 	 public List getAllProducts();
+	 public boolean deleteProduct(int productId);
+	 public Product editProduct(int productId);
+	Product cart(int proId); 
 }

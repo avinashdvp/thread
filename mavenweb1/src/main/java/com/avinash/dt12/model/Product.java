@@ -4,6 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import org.springframework.web.multipart.MultipartFile;
 
 
 
@@ -17,6 +20,14 @@ private int productId;
 private String name;
 @Column
 private int price;
+@Transient
+private MultipartFile productimg;
+public MultipartFile getProductimg() {
+	return productimg;
+}
+public void setProductimg(MultipartFile productimg) {
+	this.productimg = productimg;
+}
 public int getProductId() {
 	return productId;
 }

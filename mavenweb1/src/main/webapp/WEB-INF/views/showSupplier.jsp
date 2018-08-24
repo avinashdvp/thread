@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="sptags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="jscore" %>
+<%@include file="adminhedder.jsp" %>
 <html lang="en">
 <head>
  <title>Bootstrap Example</title>
@@ -17,13 +19,8 @@
 
 <div class="container">
  <h2>Supplier form</h2>
- <sptags:form class="form-horizontal" action="addSupplier" method="post">
-   <div class="form-group">
-     <label class="control-label col-sm-2" for="supplierId">supplierId</label>
-     <div class="col-sm-10">
-       <sptags:input path="supplierId" class="form-control" placeholder="supplierId"/>
-     </div>
-   </div>
+ <sptags:form class="form-horizontal" action="addSupplier" method="post" commandName="supply">
+   
    <div class="form-group">
      <label class="control-label col-sm-2" for="suppliername">supplierName</label>
      <div class="col-sm-10">
@@ -51,6 +48,28 @@
    </div>
  </sptags:form>
 </div>
-
+ <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th><h3>ID</h3></th>
+        <th><h3>Name</h3></th>
+        <th><h3>Description</h3></th>
+        <th><h3>Edit</h3></th>
+          <th><h3>Delete</h3></th>
+        </tr>
+    </thead>
+    <jscore:forEach items="${supplierInfo}" var="s">
+    <tbody>
+      <tr>
+        <td>${s.supplierId}</td>
+        <td>${s.suppliername}</td>
+        <td>${s.supplierDescription}</td>
+         <td><a href="#">edit</a>
+        <td><a href="deleteSupply?supplyId=${s.supplierId}">delete</td>
+        
+     </jscore:forEach>   
+      </tr>
+      </tbody>
+</table>
 </body>
 </html>

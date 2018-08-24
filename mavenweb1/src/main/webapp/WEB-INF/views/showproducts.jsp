@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="sptags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="jscore" %>
+<%@include file="adminhedder.jsp" %>
 <html lang="en">
 <head>
  <title>Bootstrap Example</title>
@@ -10,12 +11,7 @@
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+ 
 <style>
 .bootstrap-iso .form-control:focus{border-color: #5cb85c;  box-shadow: none; -webkit-box-shadow: none;}
 .bootstrap-iso .has-error .form-control:focus{box-shadow: none; -webkit-box-shadow: none;}
@@ -26,13 +22,8 @@
 
 <div class="container">
  <h2>Product form</h2>
- <sptags:form class="form-horizontal" action="addProduct" method="post" commandName="pro">
-   <div class="form-group">
-     <label class="control-label col-sm-2" for="productId">productId</label>
-     <div class="col-sm-10">
-       <sptags:input path="productId" class="form-control" placeholder="productId"/>
-     </div>
-   </div>
+ <sptags:form class="form-horizontal" action="addProduct" method="post" commandName="pro" enctype="multipart/form-data">
+   
    <div class="form-group">
      <label class="control-label col-sm-2" for="name">Product Name</label>
      <div class="col-sm-10">
@@ -45,7 +36,10 @@
        <sptags:input path="price" class="form-control" placeholder="price"/>
      </div>
    </div>
-   
+    <div class="form-group">
+     <sptags:input type="file" path="productimg" class="form-control" placeholder="productimg"/>
+     </div>
+   </div>
    <div class="form-group">
      <div class="col-sm-offset-2 col-sm-10">
        <div class="checkbox">
@@ -66,9 +60,12 @@
  <table class="table table-dark table-hover">
     <thead>
       <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Price</th>
+        <th><h3>ID</h3></th>
+        <th><h3>Name</h3></th>
+        <th><h3>Price</h3></th>
+        <th><h3>Edit</h3></th>
+          <th><h3>Delete</h3></th>
+          <th><h3>images</h3></th>
         </tr>
     </thead>
     <jscore:forEach items="${productInfo}" var="p">
@@ -77,8 +74,12 @@
         <td>${p.productId}</td>
         <td>${p.name}</td>
         <td>${p.price}</td>
+         <td><a href="editPro?proId=${p.productId}">edit</a>
+        <td><a href="deletePro?proId=${p.productId}"> delete</a></td>
+        <td><img src="resources/${p.productId}.jpg"></td>
+      </tr>   
      </jscore:forEach>   
-      </tr>
+     
       </tbody>
 </table>
 </body>

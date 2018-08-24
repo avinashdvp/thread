@@ -1,10 +1,6 @@
-${v1.name}
- ${v1.price}
- ${productInfo.price}
-  ${productInfo.name}
-  ${categoryInfo.categoryId}
-  ${categoryInfo.categoryName}
- ${categoryInfo.categoryDiscription}
+
+
+ 
  ${supplierInfo.supplierId}
   ${supplierInfo.suppliername}
  ${supplierInfo.supplierDescription}
