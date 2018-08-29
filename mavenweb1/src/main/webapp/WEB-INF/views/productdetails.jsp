@@ -1,0 +1,68 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@include file="adminhedder.jsp" %>
+<html>
+<head>
+<style>
+body  
+{
+    background-image: url("F:\\mavenweb1\\src\\main\\webapp\\resources\\45-Minute-Deep-Dish-Pizza.gif");
+    background-color: #cccccc;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div  class = "container" >
+ <div class="card" style="width:500px" >
+ 
+    <img class="card-img-top" src="resources/${productInfo.productId}.jpg" alt="Card image" style="width:100%" style="color:black">
+    <div class="card-body">
+      <h4 class="card-title">${productInfo.name}</h4>
+      <p class="card-text" color="yellow">very tasty yummy pizza must try!</p>
+      <p class="card-text">${productInfo.price} only!</p>
+      <form action="cart" method="get">
+<input type="hidden" name="id" value="${productInfo.productId}">
+<div class="container">
+	<div class="row">
+		<div class="col-lg-2">
+           <div class="input-group">
+    <span class="input-group-btn">
+      <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">
+   <span class="glyphicon glyphicon-minus"></span>
+   </button>
+   </span>
+ <input type="number" id="quantity" name="quantity" class="form-control input-number" value="1" maxlength="10">
+ <span class="input-group-btn">
+ <button type="button" class="quantity-right-plus btn btn-success btn-number" datatype="plus" data-field="">
+ <span class="glyphicon glyphicon-plus"></span>
+ </button>
+ </span>
+ </div>
+ </div>
+</div>
+</div>
+<input type="submit" name="button" value="add to cart"> 
+</form> 
+</div>
+      </div>
+  </div>
+ 
+</body>
+</html>
