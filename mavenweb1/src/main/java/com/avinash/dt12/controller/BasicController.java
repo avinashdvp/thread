@@ -4,11 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.avinash.dt12.model.Cart;
 import com.avinash.dt12.model.Product;
+import com.avinash.dt12.productins.CartDao;
 import com.avinash.dt12.productins.ProductDao;
 
 @Controller
@@ -16,6 +19,9 @@ public class BasicController
 {
 	@Autowired
 	ProductDao pdao;
+	@Autowired
+	CartDao cdao;
+	
 @RequestMapping("/home")
 
 public ModelAndView m1()
@@ -49,4 +55,15 @@ ModelAndView mv1=new ModelAndView("productdetails","productInfo",pro);
 
 return mv1;
 }
+@RequestMapping("/cart")
+public ModelAndView cart(@RequestParam("quantity")int prot,@RequestParam("id")int id)
+{
+	
+cdao.getCart(prot,id);
+Product pro=pdao.cart(id);
+List prolist=pdao.getAllProducts();
+ModelAndView mv1=new ModelAndView("user","productInfo",prolist);
+return mv1;
+}
+
 }

@@ -42,7 +42,7 @@
     </li>
 </ul>
 </nav>
-<div id="myCarousel" class="carousel slide" data-ride="carousel"  data-keyboard="true" data-interval="1000">
+<div id="myCarousel" class="carousel slide" data-ride="carousel"  data-keyboard="true" data-interval="2000">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -54,7 +54,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="resources/pizza.jpg" alt="Chania">
+      <img src="resources/1.jpg" size="1000" width="2000" alt="Chania">
       <div class="carousel-caption">
         <h3></h3>
         <p></p>
@@ -62,7 +62,7 @@
     </div>
 
     <div class="item">
-      <img src="resources/5_Pepper.jpg" alt="Chania">
+      <img src="resources/5.jpg"  size="1000" width="2000" alt="Chania">
       <div class="carousel-caption">
         <h3></h3>
         <p></p>
@@ -70,7 +70,7 @@
     </div>
 
     <div class="item">
-      <img src="resources/Digital_Veggie_Paradise_olo_266x265.jpg" alt="Flower">
+      <img src="resources/3.jpg" size="1000" width="2000" alt="Flower">
       <div class="carousel-caption">
         <h3></h3>
         <p></p>
@@ -78,7 +78,7 @@
     </div>
 
     <div class="item">
-      <img src="resources/1472105029600.jpg" alt="Flower">
+      <img src="resources/5.jpg" size="1000" width="2000" alt="Flower">
       <div class="carousel-caption">
         <h3></h3>
         <p></p>
@@ -98,53 +98,6 @@
 </div>
 
 
-<div class="container">
-  <h2>pizza's</h2>
-  
- 
- 
- 
- <table class="table table-dark table-hover">
-    <thead>
-      <tr>
-        <th>name</th>
-        <th>price</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Margherita</td>
-        <td>120</td>
-        
-      </tr>
-      <tr>
-        <td>Veg Extravaganza</td>
-        <td>180</td>
-        
-      </tr>
-      <tr>
-        <td>Veg Paradise</td>
-        <td>180</td>
-      </tbody>
-  </table>
-<div class="container" style="background:skyblue">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor..</p>
-      <p>Ut enim ad..</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor..</p>
-      <p>Ut enim ad..</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3> 
-      <p>Lorem ipsum dolor..</p>
-      <p>Ut enim ad..</p>
-    </div>
 
-</div>
 </body>
 </html>

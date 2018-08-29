@@ -15,7 +15,6 @@
 <style>
 .bootstrap-iso .form-control:focus{border-color: #5cb85c;  box-shadow: none; -webkit-box-shadow: none;}
 .bootstrap-iso .has-error .form-control:focus{box-shadow: none; -webkit-box-shadow: none;}
-
 </style>
 </head>
 <body>
@@ -57,7 +56,7 @@
 <div class="container">
   <h2>products</h2>
   
- <table class="table table-dark table-hover">
+ <table class="table table-dark table-hover" bgcolor="black">
     <thead>
       <tr>
         <th><h3>ID</h3></th>
@@ -71,11 +70,11 @@
     <jscore:forEach items="${productInfo}" var="p">
     <tbody>
       <tr>
-        <td>${p.productId}</td>
-        <td>${p.name}</td>
-        <td>${p.price}</td>
-         <td><a href="editPro?proId=${p.productId}">edit</a>
-        <td><a href="deletePro?proId=${p.productId}"> delete</a></td>
+        <td><br><br>${p.productId}</td>
+        <td><br><br>${p.name}</td>
+        <td><br><br>${p.price}</td>
+         <td><br><br><a href="editPro?proId=${p.productId}">edit</a>
+        <td><br><br><a href="deletePro?proId=${p.productId}"> delete</a></td>
         <td><img src="resources/${p.productId}.jpg"></td>
       </tr>   
      </jscore:forEach>   

@@ -29,6 +29,7 @@ public class ProductDaoimpl implements ProductDao {
 		session.saveOrUpdate(pro);
 		Transaction t=session.beginTransaction();
 		t.commit();
+		 session.close();
 		return false;
 	}
 
@@ -41,7 +42,7 @@ public class ProductDaoimpl implements ProductDao {
 	       Query query=session.createQuery("from Product");
 	       //executing query object
 	       List productList=query.list();
-	       
+	       session.close();
 	       return productList;
 		
 	}
@@ -56,6 +57,7 @@ public class ProductDaoimpl implements ProductDao {
 	      Query query=session.createQuery("from Product");
 	     Transaction t=session.beginTransaction();
 			t.commit();
+			 session.close();
 		return false;
 	}
 
@@ -73,6 +75,7 @@ public class ProductDaoimpl implements ProductDao {
 	{
 		Session session=sessionFactory.openSession();
 		Product product=(Product)session.get(Product.class,productId);
+		 session.close();
 		return product;
 	}
 	

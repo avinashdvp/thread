@@ -20,6 +20,38 @@ private int productId;
 private String name;
 @Column
 private int price;
+@Column
+private String description;
+@Column
+private String categoryName;
+@Column
+private String supplierName;
+@Column
+private int stock;
+public String getDescription() {
+	return description;
+}
+public void setDescription(String description) {
+	this.description = description;
+}
+public String getCategoryName() {
+	return categoryName;
+}
+public void setCategoryName(String categoryName) {
+	this.categoryName = categoryName;
+}
+public String getSupplierName() {
+	return supplierName;
+}
+public void setSupplierName(String supplierName) {
+	this.supplierName = supplierName;
+}
+public int getStock() {
+	return stock;
+}
+public void setStock(int stock) {
+	this.stock = stock;
+}
 @Transient
 private MultipartFile productimg;
 public MultipartFile getProductimg() {
