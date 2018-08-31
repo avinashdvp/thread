@@ -35,6 +35,30 @@
        <sptags:input path="price" class="form-control" placeholder="price"/>
      </div>
    </div>
+   <div class="form-group">
+     <label class="control-label col-sm-2" for="price">Product Description</label>
+     <div class="col-sm-10">
+       <sptags:input path="description" class="form-control" placeholder="description"/>
+     </div>
+   </div>
+   <div class="form-group">
+     <label class="control-label col-sm-2" for="categoryName">categoryName</label>
+     <div class="col-sm-10">
+       <sptags:input path="categoryName" class="form-control" placeholder="categoryName"/>
+     </div>
+   </div>
+   <div class="form-group">
+     <label class="control-label col-sm-2" for="supplierName">supplierName</label>
+     <div class="col-sm-10">
+       <sptags:input path="supplierName" class="form-control" placeholder="supplierName"/>
+     </div>
+   </div>
+   <div class="form-group">
+     <label class="control-label col-sm-2" for="stock">stock</label>
+     <div class="col-sm-10">
+       <sptags:input path="stock" class="form-control" placeholder="stock"/>
+     </div>
+   </div>
     <div class="form-group">
      <sptags:input type="file" path="productimg" class="form-control" placeholder="productimg"/>
      </div>

@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
@@ -13,10 +14,10 @@ import org.springframework.stereotype.Repository;
 @Table(name="register")
 public class Register 
 {
+	//@Id
+	//private int userId;
 	@Id
-	private int userId;
-	@Column
-	private String name;
+	private String username;
 	@Column
 	private String dob;
 	@Column
@@ -26,24 +27,43 @@ public class Register
 	@Column
 	private String password;
 	
+	@Column
+	private String role;
+	@Column
+    private boolean enabled;
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+	
+	
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public int getUserId() {
-		return userId;
-	}
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+	//public int getUserId() {
+		//return userId;
+	//}
+	//public void setUserId(int userId) {
+		//this.userId = userId;
+	//}
+	
 	public String getDob() {
 		return dob;
 	}

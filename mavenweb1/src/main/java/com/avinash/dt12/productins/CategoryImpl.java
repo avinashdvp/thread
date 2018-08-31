@@ -41,7 +41,7 @@ public class CategoryImpl implements CategoryDao
 	       return categoryList;
 		
 	}
-	@Override
+	
 	public boolean deleteCategory(int categoryId) {
 		Session session=sessionFactory.openSession();
 		 Category category=(Category)session.get(Category.class,categoryId);

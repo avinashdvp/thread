@@ -7,4 +7,5 @@ import com.avinash.dt12.model.Register;
 public interface RegistrationDao
 {
 public boolean insertRegistration(Register reg);
+public Register getUser(String name);
 }

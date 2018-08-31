@@ -30,6 +30,9 @@
     <li class="nav-item">
       <a class="nav-link" href="Supplier.html">Supplier Form</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="perform_logout">logout</a>
+    </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
         Dropdown link

@@ -5,10 +5,16 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Collection;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,6 +27,7 @@ import com.avinash.dt12.model.Product;
 import com.avinash.dt12.model.Register;
 import com.avinash.dt12.productins.LoginDaoimpl;
 import com.avinash.dt12.productins.ProductDao;
+import com.avinash.dt12.productins.RegistrationDao;
 import com.avinash.dt12.productins.RegistrationDaoimpl;
 
 @Controller
@@ -40,6 +47,7 @@ public class AuthenticationController
 	@RequestMapping("/addregister")
     public ModelAndView saveregistration (@ModelAttribute("reg") Register reg) throws IOException 
     {
+		rdao.insertRegistration(reg);
 		  
 		 ModelAndView mv=new ModelAndView("home");
 	     return mv;
@@ -51,7 +59,7 @@ public class AuthenticationController
 	
 		return "Login";
 	}
-	@RequestMapping("/checklogin")
+	//@RequestMapping("/checklogin")
 	public ModelAndView login(@RequestParam("email")String email,@RequestParam("password")String password)
 	{
     String result= ldao.logincheck(email,password);
@@ -67,4 +75,53 @@ public class AuthenticationController
         return mv;
     }
     }
+	@RequestMapping("/LoginError")
+			public ModelAndView gologinError()
+			{
+				
+				return new ModelAndView("LoginError");
+			}
+	@SuppressWarnings("unchecked")
+    @RequestMapping(value = "/login_session_attributes")
+    public String login_session_attributes(HttpSession session,Model model) {
+     System.out.println("email ========");
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+       System.out.println("email ========"+email);
+        Register  user = rdao.getUser(email);
+        System.out.println("username ========"+user.getRole());
+        session.setAttribute("userId", user.getEmail());
+        session.setAttribute("name", user.getPassword());
+        
+        session.setAttribute("LoggedIn", "true");
+        
+        
+         //session.setAttribute("cartcnt",count);
+        Collection<GrantedAuthority> authorities;
+        authorities= (Collection<GrantedAuthority>) SecurityContextHolder.getContext().getAuthentication().getAuthorities();
+        String page="";
+        String role="ROLE_USER";
+        for (GrantedAuthority authority : authorities)
+        {
+          
+             if (authority.getAuthority().equals(role))
+             {
+                 session.setAttribute("UserLoggedIn", true);
+                 session.setAttribute("UserName", user.getEmail());
+             page="/home";
+                 session.setAttribute("test",1);
+                
+             }
+             else
+             {
+                 session.setAttribute("Administrator",true);
+                 //session.setAttribute("UserName", user.getUsername());
+                 page="/index";
+            
+            }
+        }
+        return page;
+    }
+
+	
+	
 }

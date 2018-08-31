@@ -29,7 +29,7 @@ public ModelAndView m1()
 	Product p=new Product();
 	p.setName("mobile");
 	p.setPrice(100);
-	ModelAndView mv1=new ModelAndView("index","v1",p);
+	ModelAndView mv1=new ModelAndView("home");
 	return mv1;
 }
 @RequestMapping("/user")

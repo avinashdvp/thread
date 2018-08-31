@@ -2,6 +2,7 @@ package com.avinash.dt12.productins;
 
 import javax.servlet.Registration;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -22,18 +23,29 @@ public class RegistrationDaoimpl implements RegistrationDao
 	Register reg;
 	public boolean insertRegistration(Register reg) 
 	{
-		reg.setUserId((int)(Math.random()*10000));
+		//reg.setUserId((int)(Math.random()*10000));
 Session session=sessionFactory.openSession();
-User us=new User();
-us.setEmail(reg.getEmail());
-us.setPassword(reg.getPassword());
-session.saveOrUpdate(us);
-
-          session.saveOrUpdate(reg);
+reg.setRole("ROLE_USER");
+reg.setEnabled(true);
+session.saveOrUpdate(reg);
 		Transaction t=session.beginTransaction();
 		t.commit();
 		 session.close();
 		return false;
+	}
+	
+	public Register getUser(String name) 
+	{
+	String hql="from Register where username=:name";
+	Session session=sessionFactory.openSession();
+	Query query=session.createQuery(hql);
+	query.setParameter("name", name);
+	Register reg=(Register)query.uniqueResult();
+		if(reg!=null)
+			
+		return reg;
+		else
+		return null;	
 	}
 
 }

@@ -16,6 +16,17 @@
 <style>
 .bootstrap-iso .form-control:focus{border-color: #5cb85c;  box-shadow: none; -webkit-box-shadow: none;}
 .bootstrap-iso .has-error .form-control:focus{box-shadow: none; -webkit-box-shadow: none;}
+
+input[type=text] {
+    width: 50%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-color:black ;
+    background-color: none;
+    color: black;
+}
+
 </style>
 </head>
 <body>
@@ -23,9 +34,9 @@
 <sptags:form class="form-horizontal" action="addregister" method="post" commandName="reg" >
    
    <div class="form-group">
-     <label class="control-label col-sm-2" for="name">Name</label>
+     <label class="control-label col-sm-2" for="username">Name</label>
      <div class="col-sm-10">
-       <sptags:input path="name" class="form-control" placeholder="name"/>
+       <sptags:input path="username" class="form-control" placeholder="name"/>
      </div>
    </div>
    <div class="form-group">

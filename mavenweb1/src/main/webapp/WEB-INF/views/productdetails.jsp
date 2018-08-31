@@ -10,6 +10,16 @@ body
     background-image: url("F:\\mavenweb1\\src\\main\\webapp\\resources\\45-Minute-Deep-Dish-Pizza.gif");
     background-color: #cccccc;
 }
+body {
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
@@ -34,8 +44,8 @@ body
  
     <img class="card-img-top" src="resources/${productInfo.productId}.jpg" alt="Card image" style="width:100%" style="color:black">
     <div class="card-body">
-      <h4 class="card-title">${productInfo.name}</h4>
-      <p class="card-text" color="yellow">very tasty yummy pizza must try!</p>
+      <h4 class="card-title"><h3>${productInfo.name}</h3>
+      <p class="card-text" color="yellow"><h4>very tasty yummy pizza must try!</h4></p>
       <p class="card-text">${productInfo.price} only!</p>
       <form action="cart" method="get">
 <input type="hidden" name="id" value="${productInfo.productId}">

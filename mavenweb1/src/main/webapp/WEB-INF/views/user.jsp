@@ -29,6 +29,9 @@
     </li>
     </ul>
   </nav>
+  <li class="nav-item">
+      <a class="nav-link" href="perform_logout"> <h1>LOGOUT</h1></a>
+    </li>
 <div class="container">
   <h2>products</h2>
   
