@@ -18,7 +18,7 @@
  </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-expand-sm  navbar-light bg-light">
   <ul class="navbar-nav">
     <li class="nav-item">
       <a class="nav-link" href="registeration" >REGISTER</a>
@@ -28,10 +28,14 @@
       <a class="nav-link" href="login" >LOGIN</a>
     </li>
     </ul>
-  </nav>
+  
   <li class="nav-item">
-      <a class="nav-link" href="perform_logout"> <h1>LOGOUT</h1></a>
+      <a class="nav-link" href="perform_logout"> LOGOUT</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="cartdetails"> <img src="F:\\mavenweb1\\src\\main\\webapp\\resources\\LeftCreepyHorsechestnutleafminer-small.gif" size="50" width="40" ></a>
+    </li>
+    </nav>
 <div class="container">
   <h2>products</h2>
   

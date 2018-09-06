@@ -48,6 +48,8 @@
      <li class="nav-item">
       <a class="nav-link" href="perform_logout"> <h1>LOGOUT</h1></a>
     </li>
+     </li>
+     
    </ul>
    </nav>
    <div id="myCarousel" class="carousel slide" data-ride="carousel"  data-keyboard="true" data-interval="2000">

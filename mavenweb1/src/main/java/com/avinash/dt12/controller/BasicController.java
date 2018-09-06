@@ -2,6 +2,8 @@ package com.avinash.dt12.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +23,8 @@ public class BasicController
 	ProductDao pdao;
 	@Autowired
 	CartDao cdao;
+	@Autowired
+	HttpSession session;
 	
 @RequestMapping("/home")
 
@@ -58,11 +62,21 @@ return mv1;
 @RequestMapping("/cart")
 public ModelAndView cart(@RequestParam("quantity")int prot,@RequestParam("id")int id)
 {
-	
-cdao.getCart(prot,id);
+	String un= (String) session.getAttribute("username");
+cdao.saveCart(prot,id,un);
 Product pro=pdao.cart(id);
 List prolist=pdao.getAllProducts();
 ModelAndView mv1=new ModelAndView("user","productInfo",prolist);
+return mv1;
+}
+@RequestMapping("/cartdetails")
+public ModelAndView cartdetails()
+{
+	
+
+String un= (String) session.getAttribute("username");
+List cartList=cdao.getCartdetails(un);
+ModelAndView mv1=new ModelAndView("Cart","cartInfo",cartList);
 return mv1;
 }
 

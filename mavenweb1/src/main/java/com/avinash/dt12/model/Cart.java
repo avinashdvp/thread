@@ -12,6 +12,14 @@ public class Cart
 @Id
 private int categoryId;
 @Column
+private String cartUser;
+public String getCartUser() {
+	return cartUser;
+}
+public void setCartUser(String cartUser) {
+	this.cartUser = cartUser;
+}
+@Column
 private String productName;
 @Column
 private int productPrice;

@@ -27,7 +27,7 @@ public class RegistrationDaoimpl implements RegistrationDao
 Session session=sessionFactory.openSession();
 reg.setRole("ROLE_USER");
 reg.setEnabled(true);
-session.saveOrUpdate(reg);
+session.save(reg);
 		Transaction t=session.beginTransaction();
 		t.commit();
 		 session.close();

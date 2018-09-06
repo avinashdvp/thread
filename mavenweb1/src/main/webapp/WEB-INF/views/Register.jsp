@@ -34,7 +34,7 @@ input[type=text] {
 <sptags:form class="form-horizontal" action="addregister" method="post" commandName="reg" >
    
    <div class="form-group">
-     <label class="control-label col-sm-2" for="username">Name</label>
+     <label class="control-label col-sm-2" for="username">userName</label>
      <div class="col-sm-10">
        <sptags:input path="username" class="form-control" placeholder="name"/>
      </div>

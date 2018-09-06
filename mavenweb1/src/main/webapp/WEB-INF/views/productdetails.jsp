@@ -71,8 +71,8 @@ body {
 <input type="submit" name="button" value="add to cart"> 
 </form> 
 </div>
-      </div>
-  </div>
+</div>
+</div>
  
 </body>
 </html>

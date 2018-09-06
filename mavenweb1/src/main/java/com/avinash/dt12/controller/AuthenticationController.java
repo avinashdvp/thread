@@ -89,7 +89,7 @@ public class AuthenticationController
        System.out.println("email ========"+email);
         Register  user = rdao.getUser(email);
         System.out.println("username ========"+user.getRole());
-        session.setAttribute("userId", user.getEmail());
+        session.setAttribute("username", user.getUsername());
         session.setAttribute("name", user.getPassword());
         
         session.setAttribute("LoggedIn", "true");
@@ -106,7 +106,7 @@ public class AuthenticationController
              if (authority.getAuthority().equals(role))
              {
                  session.setAttribute("UserLoggedIn", true);
-                 session.setAttribute("UserName", user.getEmail());
+                 session.setAttribute("UserName", user.getUsername());
              page="/home";
                  session.setAttribute("test",1);
                 
