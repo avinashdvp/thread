@@ -13,7 +13,7 @@
   <welcome-file-list>
   <welcome-file>/WEB-INF/views/home.jsp</welcome-file>
   </welcome-file-list>
-  <context-param>
+<context-param>
 <param-name>contextConfigLocation</param-name>
 <param-value>/WEB-INF/welcome-servlet.xml,/WEB-INF/Spring-security.xml,/WEB-INF/databaseconfig.xml</param-value>
 </context-param>

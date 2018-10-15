@@ -17,31 +17,31 @@ import com.avinash.dt12.productins.CategoryDao;
 public class CategoryController 
 {
 	@Autowired
-	CategoryDao cdao;
+	CategoryDao categoryDao;
 	@RequestMapping("/Category")
 
 	public ModelAndView m2()
 	{
-		ModelAndView mv2=new ModelAndView("showCategory","cat",new Category());
-		List catList =cdao.getAllCategory();
-		mv2.addObject("categoryInfo",catList);
-		return mv2;
+		ModelAndView modelAndView=new ModelAndView("showCategory","cat",new Category());
+		List catList =categoryDao.getAllCategory();
+		modelAndView.addObject("categoryInfo",catList);
+		return modelAndView;
 	}
 	@RequestMapping(value="/addCategory" , method=RequestMethod.POST)
 	 public ModelAndView saveCategory(@ModelAttribute("cat") Category cat)
 	    {
-	        cdao.insert(cat);
-	        List catList =cdao.getAllCategory();
-	    ModelAndView mv=new ModelAndView("showCategory","categoryInfo",catList);
-	    return mv;
+		categoryDao.insert(cat);
+	        List catList =categoryDao.getAllCategory();
+	    ModelAndView modelAndView=new ModelAndView("showCategory","categoryInfo",catList);
+	    return modelAndView;
 	    }
 	@RequestMapping("/deleteCat")
 	public ModelAndView deleteCategory(@RequestParam("catId")int CategoryId)
 	{
-	cdao.deleteCategory(CategoryId);
-	List catList =cdao.getAllCategory();
-    ModelAndView mv=new ModelAndView("showCategory","cat",new Category());
-	mv.addObject("categoryInfo",catList);
-    return mv;
+		categoryDao.deleteCategory(CategoryId);
+	List catList =categoryDao.getAllCategory();
+    ModelAndView modelAndView=new ModelAndView("showCategory","cat",new Category());
+    modelAndView.addObject("categoryInfo",catList);
+    return modelAndView;
 	}
 }

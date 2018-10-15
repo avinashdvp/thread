@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
+<%@include file="homehedder.jsp" %>
 <head>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,25 +33,8 @@
 
 <body>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="registeration" color="white"><h1>REGISTER</h1></a>
-   </li>
-    <li class="nav-item">
-      <a class="nav-link" href="login"> <h1>LOGIN</h1></a>
-    </li>
-     <li class="nav-item">
-      <a class="nav-link" href="user"> <h1>PRODUCTS</h1></a>
-    </li>
-     </li>
-     <li class="nav-item">
-      <a class="nav-link" href="perform_logout"> <h1>LOGOUT</h1></a>
-    </li>
-     </li>
-     
-   </ul>
-   </nav>
+   <div class="container">
+   
    <div id="myCarousel" class="carousel slide" data-ride="carousel"  data-keyboard="true" data-interval="2000">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -64,7 +47,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="resources/1.jpg" size="1000" width="2000" alt="Chania">
+      <img src="resources/1.jpg" size="500" width="1000" alt="Chania">
       <div class="carousel-caption">
         <h3></h3>
         <p></p>
@@ -72,7 +55,7 @@
     </div>
 
     <div class="item">
-      <img src="resources/5.jpg"  size="1000" width="2000" alt="Chania">
+      <img src="resources/3.jpg"  size="500" width="1000" alt="Chania">
       <div class="carousel-caption">
         <h3></h3>
         <p></p>
@@ -80,7 +63,7 @@
     </div>
 
     <div class="item">
-      <img src="resources/3.jpg" size="1000" width="2000" alt="Flower">
+      <img src="resources/4.jpg" size="500" width="1000" alt="Flower">
       <div class="carousel-caption">
         <h3></h3>
         <p></p>
@@ -88,7 +71,7 @@
     </div>
 
     <div class="item">
-      <img src="resources/5.jpg" size="1000" width="2000" alt="Flower">
+      <img src="resources/1.jpg" size="500" width="1000" alt="Flower">
       <div class="carousel-caption">
         <h3></h3>
         <p></p>
@@ -106,6 +89,6 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-   
+ </div>  
  </body>
 </html>

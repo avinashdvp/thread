@@ -40,11 +40,12 @@
         <td><br><br>${c.productPrice}</td>
          <td><br><br>${c.totalPrice}
         <td><br><br>${c.quantity}</td>
-       
+       <jscore:set var="payableAmount" value="${payableAmount+c.totalPrice}" />
       </tr>   
      </jscore:forEach>   
-     
-      </tbody>
-</table>
+     </tbody>
+     </table>
+payableAmount=${payableAmount}
+<a href="deletecart">delete</a></td>
 </body>
 </html>

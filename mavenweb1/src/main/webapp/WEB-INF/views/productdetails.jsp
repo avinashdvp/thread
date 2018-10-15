@@ -22,8 +22,8 @@ body {
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-<title>Bootstrap Example</title>
+
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -34,9 +34,7 @@ body {
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  
 </head>
 <body>
 <div  class = "container" >
@@ -45,7 +43,7 @@ body {
     <img class="card-img-top" src="resources/${productInfo.productId}.jpg" alt="Card image" style="width:100%" style="color:black">
     <div class="card-body">
       <h4 class="card-title"><h3>${productInfo.name}</h3>
-      <p class="card-text" color="yellow"><h4>very tasty yummy pizza must try!</h4></p>
+      <p class="card-text" color="yellow"><h4>${productInfo.description}</h4></p>
       <p class="card-text">${productInfo.price} only!</p>
       <form action="cart" method="get">
 <input type="hidden" name="id" value="${productInfo.productId}">

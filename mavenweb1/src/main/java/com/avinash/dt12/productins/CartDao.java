@@ -8,5 +8,6 @@ public interface CartDao
 {
 	public void saveCart(int quantity,int id,String un);
 	public List getCartdetails(String un);
+	public void deleteCart(String un);
 	
 }

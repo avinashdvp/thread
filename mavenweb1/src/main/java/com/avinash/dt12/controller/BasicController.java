@@ -20,9 +20,9 @@ import com.avinash.dt12.productins.ProductDao;
 public class BasicController 
 {
 	@Autowired
-	ProductDao pdao;
+	ProductDao productDao;
 	@Autowired
-	CartDao cdao;
+	CartDao cartDao;
 	@Autowired
 	HttpSession session;
 	
@@ -33,15 +33,15 @@ public ModelAndView m1()
 	Product p=new Product();
 	p.setName("mobile");
 	p.setPrice(100);
-	ModelAndView mv1=new ModelAndView("home");
-	return mv1;
+	ModelAndView modelAndView=new ModelAndView("home");
+	return modelAndView;
 }
 @RequestMapping("/user")
 public ModelAndView user()
 {   
-	List prolist=pdao.getAllProducts();
-ModelAndView mv1=new ModelAndView("user","productInfo",prolist);
-return mv1;
+	List prolist=productDao.getAllProducts();
+ModelAndView modelAndView=new ModelAndView("user","productInfo",prolist);
+return modelAndView;
 	
 }
 @RequestMapping("/index")
@@ -53,21 +53,21 @@ public String admin()
 @RequestMapping("/cartPro")
 public ModelAndView editProduct(@RequestParam("proId")int proId)
 {
-Product pro=pdao.cart(proId);
+Product pro=productDao.cart(proId);
 
-ModelAndView mv1=new ModelAndView("productdetails","productInfo",pro);
+ModelAndView modelAndView=new ModelAndView("productdetails","productInfo",pro);
 
-return mv1;
+return modelAndView;
 }
 @RequestMapping("/cart")
 public ModelAndView cart(@RequestParam("quantity")int prot,@RequestParam("id")int id)
 {
 	String un= (String) session.getAttribute("username");
-cdao.saveCart(prot,id,un);
-Product pro=pdao.cart(id);
-List prolist=pdao.getAllProducts();
-ModelAndView mv1=new ModelAndView("user","productInfo",prolist);
-return mv1;
+	cartDao.saveCart(prot,id,un);
+Product pro=productDao.cart(id);
+List prolist=productDao.getAllProducts();
+ModelAndView modelAndView=new ModelAndView("user","productInfo",prolist);
+return modelAndView;
 }
 @RequestMapping("/cartdetails")
 public ModelAndView cartdetails()
@@ -75,9 +75,18 @@ public ModelAndView cartdetails()
 	
 
 String un= (String) session.getAttribute("username");
-List cartList=cdao.getCartdetails(un);
-ModelAndView mv1=new ModelAndView("Cart","cartInfo",cartList);
-return mv1;
+List cartList=cartDao.getCartdetails(un);
+ModelAndView modelAndView =new ModelAndView("Cart","cartInfo",cartList);
+return modelAndView;
 }
-
+@RequestMapping("/deletecart")
+public ModelAndView deletecart()
+{
+String un= (String) session.getAttribute("username");
+cartDao.deleteCart(un);
+System.out.println("hello");
+List cartList=cartDao.getCartdetails(un);
+ModelAndView modelAndView =new ModelAndView("Cart","cartInfo",cartList);
+return modelAndView;
+}
 }

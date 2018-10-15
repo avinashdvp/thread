@@ -50,5 +50,18 @@ public List getCartdetails(String un)
 	 List cartList=query.list();
 	 return cartList;
 }
+public void deleteCart(String un) 
+{
+	System.out.println(un);
+	Session session=sessionFactory.openSession();
+	Query query = session.createQuery("delete Cart where cartuser=:un");
+    query.setParameter("un", un);
+    query.executeUpdate();
+    org.hibernate.Transaction t=session.beginTransaction();
+    t.commit();
+    session.close();
+    
+	
+}
 
 }

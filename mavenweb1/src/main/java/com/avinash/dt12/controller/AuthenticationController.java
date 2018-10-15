@@ -33,24 +33,24 @@ import com.avinash.dt12.productins.RegistrationDaoimpl;
 @Controller
 public class AuthenticationController 
 {	@Autowired
-	ProductDao pdao;
+	ProductDao productDao;
 	@Autowired
-	RegistrationDaoimpl rdao;
+	RegistrationDaoimpl registrationDaoimpl;
 	@Autowired
-	LoginDaoimpl ldao;
+	LoginDaoimpl loginDaoimpl;
 	@RequestMapping("/registeration")
 	public ModelAndView regiater()
 	{
-  ModelAndView mv =new ModelAndView("Register","reg",new Register());
-  return mv;
+  ModelAndView modelAndView =new ModelAndView("Register","reg",new Register());
+  return modelAndView;
 	}
 	@RequestMapping("/addregister")
     public ModelAndView saveregistration (@ModelAttribute("reg") Register reg) throws IOException 
     {
-		rdao.insertRegistration(reg);
+		registrationDaoimpl.insertRegistration(reg);
 		  
-		 ModelAndView mv=new ModelAndView("home");
-	     return mv;
+		 ModelAndView modelAndView =new ModelAndView("home");
+	     return modelAndView;
 		
     }
 	@RequestMapping("/login")
@@ -62,10 +62,10 @@ public class AuthenticationController
 	//@RequestMapping("/checklogin")
 	public ModelAndView login(@RequestParam("email")String email,@RequestParam("password")String password)
 	{
-    String result= ldao.logincheck(email,password);
+    String result= loginDaoimpl.logincheck(email,password);
     if(result=="success")
     {
-    List prolist=pdao.getAllProducts();
+    List prolist=productDao.getAllProducts();
     ModelAndView mv=new ModelAndView("user","productInfo",prolist);
      return mv;
     }
@@ -87,7 +87,7 @@ public class AuthenticationController
      System.out.println("email ========");
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
        System.out.println("email ========"+email);
-        Register  user = rdao.getUser(email);
+        Register  user = registrationDaoimpl.getUser(email);
         System.out.println("username ========"+user.getRole());
         session.setAttribute("username", user.getUsername());
         session.setAttribute("name", user.getPassword());

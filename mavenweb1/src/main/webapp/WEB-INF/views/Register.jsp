@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@include file="homehedder.jsp" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="sptags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -30,8 +31,9 @@ input[type=text] {
 </style>
 </head>
 <body>
+
 <div class="container">
-<sptags:form class="form-horizontal" action="addregister" method="post" commandName="reg" >
+<sptags:form class="form-horizontal"   name="addregister" action="addregister" method="post" commandName="reg"  onsubmit="confirm()">
    
    <div class="form-group">
      <label class="control-label col-sm-2" for="username">userName</label>
@@ -71,5 +73,21 @@ input[type=text] {
    </div>
  </sptags:form>
    </div>
+   <script>
+   function confirm()
+ {
+   var Password=document.addregister.password.value;
+   
+  if(Password.length>6)
+        {
+        return true;
+        }
+    else
+        {
+        alert("password is too short");
+        return false;
+        }
+}
+   </script>
 </body>
 </html>

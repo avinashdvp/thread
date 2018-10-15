@@ -13,16 +13,16 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" href="home.html"><h2>home</h2></a>
+      <a class="nav-link" href="home.html">home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="Product.html"><h2>product</h2></a>
+      <a class="nav-link" href="Product.html">product</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="Category.html"><h2>Category</h2> </a>
+      <a class="nav-link" href="Category.html">Category </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="Supplier.html"><h2>Supplier</h2> </a>
+      <a class="nav-link" href="Supplier.html">Supplier </a>
     </li>
 </ul>
 </nav>

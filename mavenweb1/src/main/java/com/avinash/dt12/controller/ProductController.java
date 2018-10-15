@@ -17,21 +17,31 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.avinash.dt12.model.Product;
+import com.avinash.dt12.productins.CategoryImpl;
 import com.avinash.dt12.productins.ProductDao;
+import com.avinash.dt12.productins.SupplierDaoImpl;
 
 @Controller
 public class ProductController 
 {
 	@Autowired
 	ProductDao pdao;
+	@Autowired
+	CategoryImpl categoryImpl;
+	@Autowired
+	SupplierDaoImpl supplierDaoImpl;
 	
 	
 	@RequestMapping("/Product")
 	public ModelAndView sendProducts()
 	{
+		List cl=categoryImpl.getAllCategory();
+		List supplierList=supplierDaoImpl.getallSuppliers();
 		ModelAndView mv1=new ModelAndView("showproducts","pro",new Product());
 		 List proList1 =pdao.getAllProducts();
 		 mv1.addObject("productInfo",proList1);
+		 mv1.addObject("catinfo",cl);
+		 mv1.addObject("supinfo",supplierList);
 		return mv1;
 	}
 	@RequestMapping(value="/addProduct" , method=RequestMethod.POST )

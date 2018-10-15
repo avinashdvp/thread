@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@include file="homehedder.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="sptags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="jscore" %>
@@ -18,24 +19,7 @@
  </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm  navbar-light bg-light">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="registeration" >REGISTER</a>
-    </li>
-    
-<li class="nav-item">
-      <a class="nav-link" href="login" >LOGIN</a>
-    </li>
-    </ul>
-  
-  <li class="nav-item">
-      <a class="nav-link" href="perform_logout"> LOGOUT</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="cartdetails"> <img src="F:\\mavenweb1\\src\\main\\webapp\\resources\\LeftCreepyHorsechestnutleafminer-small.gif" size="50" width="40" ></a>
-    </li>
-    </nav>
+
 <div class="container">
   <h2>products</h2>
   

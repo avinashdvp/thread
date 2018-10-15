@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="sptags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="jscore" %>
-<%@include file="adminhedder.jsp" %>
+<%@include file="homehedder.jsp" %>
 <html lang="en">
 <head>
  <title>Bootstrap Example</title>
@@ -44,13 +44,25 @@
    <div class="form-group">
      <label class="control-label col-sm-2" for="categoryName">categoryName</label>
      <div class="col-sm-10">
-       <sptags:input path="categoryName" class="form-control" placeholder="categoryName"/>
+       <sptags:select path="categoryName" >
+        <jscore:forEach items="${catinfo}" var="c">
+  <option value="${c.categoryName}">${c.categoryName}</option>
+  </jscore:forEach>
+  
+</sptags:select>
+
      </div>
+     
    </div>
+   
    <div class="form-group">
      <label class="control-label col-sm-2" for="supplierName">supplierName</label>
      <div class="col-sm-10">
-       <sptags:input path="supplierName" class="form-control" placeholder="supplierName"/>
+       <sptags:select path="supplierName" class="form-control" placeholder="supplierName">
+       <jscore:forEach items="${supinfo}" var="s">
+        <option value="${s.suppliername}">${s.suppliername}</option>
+        </jscore:forEach>
+        </sptags:select>
      </div>
    </div>
    <div class="form-group">
@@ -73,10 +85,12 @@
    <div class="form-group">
      <div class="col-sm-offset-2 col-sm-10">
        <button type="submit" class="btn btn-default">Submit</button>
+       </sptags:form>
      </div>
+     
    </div>
- </sptags:form>
-</div>
+
+
 <div class="container">
   <h2>products</h2>
   
@@ -89,6 +103,8 @@
         <th><h3>Edit</h3></th>
           <th><h3>Delete</h3></th>
           <th><h3>images</h3></th>
+          <th><h3>categoryName</h3></th>
+          <th><h3>supplierName</h3></th>
         </tr>
     </thead>
     <jscore:forEach items="${productInfo}" var="p">
@@ -100,8 +116,11 @@
          <td><br><br><a href="editPro?proId=${p.productId}">edit</a>
         <td><br><br><a href="deletePro?proId=${p.productId}"> delete</a></td>
         <td><img src="resources/${p.productId}.jpg"></td>
+        <td><br><br>${p.categoryName}</td>
+        <td><br><br>${p.supplierName}</td>
       </tr>   
      </jscore:forEach>   
+     
      
       </tbody>
 </table>
