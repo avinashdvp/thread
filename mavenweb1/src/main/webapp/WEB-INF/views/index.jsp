@@ -21,30 +21,22 @@
       <a class="nav-link" href="home.html">home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="Product.html">product Form</a>
+      <a class="nav-link" href="Product.html">product </a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-link" href="Category.html">Category Form</a>
+      <a class="nav-link" href="Category.html">Category </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="Supplier.html">Supplier Form</a>
+      <a class="nav-link" href="Supplier.html">Supplier </a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="perform_logout">logout</a>
     </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Dropdown link
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
-      </div>
-    </li>
+    
 </ul>
 </nav>
+<div class="container">
 <div id="myCarousel" class="carousel slide" data-ride="carousel"  data-keyboard="true" data-interval="2000">
   <!-- Indicators -->
   <ol class="carousel-indicators">

@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@include file="adminhedder.jsp" %>
+<%@include file="homehedder.jsp" %>
 <html>
 <head>
 <style>
 body  
 {
-    background-image: url("F:\\mavenweb1\\src\\main\\webapp\\resources\\45-Minute-Deep-Dish-Pizza.gif");
+    background-image: url("F:\\mavenweb1\\src\\main\\webapp\\resources\\bgb.jpg");
     background-color: #cccccc;
 }
 body {
@@ -38,13 +38,12 @@ body {
 </head>
 <body>
 <div  class = "container" >
- <div class="card" style="width:500px" >
- 
-    <img class="card-img-top" src="resources/${productInfo.productId}.jpg" alt="Card image" style="width:100%" style="color:black">
+ <div class="card" style="width:700px" >
+ <img class="card-img-top" src="resources/${productInfo.productId}.jpg" alt="Card image" style="width:100%" style="color:black">
     <div class="card-body">
       <h4 class="card-title"><h3>${productInfo.name}</h3>
-      <p class="card-text" color="yellow"><h4>${productInfo.description}</h4></p>
-      <p class="card-text">${productInfo.price} only!</p>
+      <p class="card-text" color="yellow"><h3><b>${productInfo.description}</b></h3></p>
+      <h4><p class="card-text">${productInfo.price} only!</p></h4>
       <form action="cart" method="get">
 <input type="hidden" name="id" value="${productInfo.productId}">
 <div class="container">
@@ -66,11 +65,10 @@ body {
  </div>
 </div>
 </div>
-<input type="submit" name="button" value="add to cart"> 
-</form> 
+<h3><input type="submit" name="button" value="add to cart"> 
+</h3></form> 
 </div>
 </div>
 </div>
- 
-</body>
+ </body>
 </html>

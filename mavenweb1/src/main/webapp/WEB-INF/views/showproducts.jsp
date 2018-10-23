@@ -44,7 +44,7 @@
    <div class="form-group">
      <label class="control-label col-sm-2" for="categoryName">categoryName</label>
      <div class="col-sm-10">
-       <sptags:select path="categoryName" >
+       <sptags:select path="categoryName"  class="form-control">
         <jscore:forEach items="${catinfo}" var="c">
   <option value="${c.categoryName}">${c.categoryName}</option>
   </jscore:forEach>

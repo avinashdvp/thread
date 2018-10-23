@@ -6,8 +6,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-<title>Bootstrap Example</title>
+<title>Register</title>
+
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -54,7 +54,7 @@ input[type=text] {
        <sptags:input path="address" class="form-control" placeholder="address"/>
      </div>
    </div>
-     <div class="form-group">
+      <div class="form-group">
      <label class="control-label col-sm-2" for="password">password</label>
      <div class="col-sm-10">
        <sptags:input path="password" class="form-control" placeholder="password"/>

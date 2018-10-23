@@ -18,9 +18,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Spicy Bakers</title>
 <style type="text/css">
 
+body  
+{
+    background-image: url("F:\\mavenweb1\\src\\main\\webapp\\resources\\");
+    background-color: #cccccc;
+}
 </style>
  <title>Bootstrap Example</title>
   <meta charset="utf-8">
@@ -32,10 +37,18 @@
 </head>
 
 <body>
-
-   <div class="container">
+<div class="jumbotron jumbotron-fluid"  >
+  <div class="container">
+    <h1 align="center" > Spicy Bakers</h1>      
+     
+  </div>
+</div>
+       
+</div>
+<div class="container-fluid">
+<div class="container">
    
-   <div id="myCarousel" class="carousel slide" data-ride="carousel"  data-keyboard="true" data-interval="2000">
+   <div id="myCarousel" class="carousel slide" data-ride="carousel"  data-keyboard="true" data-interval="2000"style="width: 1000px ; margin: 900 " >
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -55,7 +68,7 @@
     </div>
 
     <div class="item">
-      <img src="resources/3.jpg"  size="500" width="1000" alt="Chania">
+      <img src="resources/bgb.jpg"  size="500" width="1000" alt="Chania">
       <div class="carousel-caption">
         <h3></h3>
         <p></p>
@@ -63,7 +76,7 @@
     </div>
 
     <div class="item">
-      <img src="resources/4.jpg" size="500" width="1000" alt="Flower">
+      <img src="resources/sand.jpg" size="500" width="1000" alt="Flower">
       <div class="carousel-caption">
         <h3></h3>
         <p></p>
@@ -71,7 +84,7 @@
     </div>
 
     <div class="item">
-      <img src="resources/1.jpg" size="500" width="1000" alt="Flower">
+      <img src="resources/hd.jpg" size="500" width="1000" alt="Flower">
       <div class="carousel-caption">
         <h3></h3>
         <p></p>
